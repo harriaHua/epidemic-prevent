@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "esnext", // 目标语言的版本,ESNext 是一个动态的 ECMAScript 版本，指当前最新发布的版本没有包含，但已经定案（确定明年发布），包含新特性的 ECMAScript 版本
+    "module": "esnext", // 生成代码的模板标准
+    "moduleResolution": "node", // 模块解析策略，ts默认用node的解析策略，即相对的方式导入
+    "allowSyntheticDefaultImports": true,
+    "strict": true, // 开启所有严格的类型检查
+    "jsx": "preserve",
+    "sourceMap": true, // 生成目标文件的sourceMap文件
+    "lib": ["esnext", "dom"], // TS需要引用的库，即声明文件，es5 默认引用dom、es5、scripthost,如需要使用es的高级版本特性，通常都需要配置，如es8的数组新特性需要引入"ES2019.Array",
+    "suppressImplicitAnyIndexErrors": true,
+    "types": ["vite/client"], // 加载的声明文件包
+    "plugins": [{ "name": "@vuedx/typescript-plugin-vue" }],
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  // 表示编译需要编译的文件或目录
+  // "include": [
+  //   "src/**/*.ts",
+  //   "src/**/*.d.ts",
+  //   "src/**/*.tsx",
+  //   "src/**/*.vue",
+  //   "*.d.ts"
+  // ],
+  // 表示编译器需要排除的文件或文件夹
+  "exclude": ["node_modules", "dist"]
+}

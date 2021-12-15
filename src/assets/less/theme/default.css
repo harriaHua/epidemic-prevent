@@ -1,0 +1,39 @@
+.aside {
+  background-color: #545c64;
+}
+.aside .logo {
+  background-color: #545c64;
+}
+.aside .logo h1 {
+  color: #e9be4a;
+  transition: all 0.3s;
+}
+.aside .logo h1:hover {
+  color: #f7f7f7;
+}
+.aside .el-scrollbar__thumb {
+  background-color: #e9be4a;
+}
+.header {
+  background-color: #545c64;
+}
+.header .header-icon {
+  color: #e9be4a;
+}
+.header .header-icon .use {
+  fill: red;
+}
+.header .hover {
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+.header .hover:hover {
+  background-color: rgba(189, 189, 189, 0.342);
+}
+.main {
+  background-color: #f3f5f7;
+}
+.footer {
+  background-color: #dddddd;
+  color: #8f9092;
+}

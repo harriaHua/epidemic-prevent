@@ -1,0 +1,53 @@
+@primaryColor: #e9be4a;
+@subColor: #545c64;
+@grey: rgba(189, 189, 189, 0.342);
+
+.aside {
+  //侧边栏
+  background-color: @subColor;
+  .logo {
+    //左上角logo处的颜色
+    background-color: @subColor;
+    h1 {
+      //标题的颜色
+      color: @primaryColor;
+      transition: all 0.3s;
+      &:hover {
+        color: #f7f7f7;
+      }
+    }
+  }
+  .el-scrollbar__thumb {
+    //菜单的滚动条
+    background-color: @primaryColor;
+  }
+}
+
+.header {
+  //头部
+  background-color: @subColor;
+  .header-icon {
+    color: @primaryColor;
+    .use {
+      fill: red;
+    }
+  }
+  .hover {
+    border-radius: 4px;
+    transition: all 0.3s;
+    &:hover {
+      background-color: @grey;
+    }
+  }
+}
+
+.main {
+  //el-main的背景色
+  background-color: #f3f5f7;
+}
+
+.footer {
+  //底部的颜色
+  background-color: #dddddd;
+  color: #8f9092;
+}
