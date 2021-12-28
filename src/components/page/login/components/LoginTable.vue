@@ -1,0 +1,77 @@
+<!--
+ * @Description: 
+ * @Version: 0.1
+ * @Author: Harria
+ * @Date: 2021-12-18 09:57:35
+ * @LastEditors: Harria
+ * @LastEditTime: 2021-12-18 22:43:34
+-->
+<template>
+  <div class="loginTable">
+    <el-row
+      ><div class="logo"><svg-icon name="xia" class="icon"></svg-icon></div
+    ></el-row>
+    <el-row
+      ><el-input v-model="userName" placeholder="请输入用户名">
+        <template #prefix>
+          <el-icon class="el-input__icon"><avatar /></el-icon> </template
+      ></el-input>
+    </el-row>
+    <el-row
+      ><el-input v-model="password" placeholder="请输入密码"
+        ><template #prefix
+          ><el-icon class="el-input__icon"
+            ><svg-icon name="password" /></el-icon></template></el-input
+    ></el-row>
+
+    <el-row><el-button type="warning" @click="login()">登录</el-button></el-row>
+  </div>
+</template>
+
+<script lang="ts">
+import { successNotification } from '@/utils/message'
+import { useRouter } from 'vue-router'
+import { defineComponent, ref } from '@vue/runtime-core'
+import SvgIcon from '@/components/SvgIcon.vue'
+export default defineComponent({
+  components: { SvgIcon },
+  name: 'LoginTable.vue',
+  setup(props, context) {
+    let router = useRouter()
+    let userName = ref('')
+    let password = ref('')
+    const login = () => {
+      successNotification('登录成功', '')
+      router.push('/')
+    }
+
+    return { userName, password, login }
+  },
+})
+</script>
+
+<style lang="less" scoped>
+.loginTable {
+  width: 360px;
+  padding: 30px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: #d9d9d9 -1px 9px 20px 2px;
+  .logo {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    .icon {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.el-row {
+  margin: 20px 0 20px 0;
+  .el-button {
+    width: 100%;
+  }
+}
+</style>

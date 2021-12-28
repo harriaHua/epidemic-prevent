@@ -4,7 +4,7 @@
  * @Author: Harria
  * @Date: 2021-12-09 17:05:48
  * @LastEditors: Harria
- * @LastEditTime: 2021-12-12 22:45:18
+ * @LastEditTime: 2021-12-17 11:05:50
 -->
 <template>
   <!-- logo -->
@@ -35,13 +35,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from "@vue/runtime-core";
-import data from "./menu.js";
-import Menu from "./Menu.vue";
+import { defineComponent, onMounted, ref } from '@vue/runtime-core'
+import data from './menu.js'
+import Menu from './Menu.vue'
 // 从环境变量中引用应用名
-const VITE_APP_TITLE = import.meta.env.VITE_APP_TITLE;
+const VITE_APP_TITLE = import.meta.env.VITE_APP_TITLE
 export default defineComponent({
-  name: "GlobalAside",
+  name: 'GlobalAside',
   components: { Menu },
   props: {
     isCollapse: {
@@ -61,19 +61,19 @@ export default defineComponent({
     interface ThemeColor {
       // 一个接口，用来根据主题切换菜单颜色
       // HACK 试试用css切换？ 不然这个页面好复杂
-      readonly activeTextColor: string;
-      readonly backgroundColor: string;
-      readonly textColor: string;
+      readonly activeTextColor: string
+      readonly backgroundColor: string
+      readonly textColor: string
     }
     let defaultThemeColor: ThemeColor = {
-      activeTextColor: "#ffd04b",
-      backgroundColor: "#545c64",
-      textColor: "#fff",
-    };
+      activeTextColor: '#ffd04b',
+      backgroundColor: '#545c64',
+      textColor: '#fff',
+    }
     // XXX 之后会换成localstorage
-    let theme = import.meta.env.VITE_APP_THEME;
+    let theme = import.meta.env.VITE_APP_THEME
 
-    let menuMaxHeight = ref(window.innerHeight - 70);
+    let menuMaxHeight = ref(window.innerHeight - 70)
     /**
      * @description: 根据主题名匹配菜单颜色
      * @param { string } theme 主题名
@@ -82,29 +82,29 @@ export default defineComponent({
      */
     const switchTheme = (theme: string): ThemeColor => {
       switch (theme) {
-        case "default":
-          return defaultThemeColor;
+        case 'default':
+          return defaultThemeColor
 
         default:
-          return defaultThemeColor;
+          return defaultThemeColor
       }
-    };
-    let color = ref(switchTheme(theme));
+    }
+    let color = ref(switchTheme(theme))
 
     // 监视浏览器窗口变化，每变一次就重新计算一下菜单高度，保证aside不会出现原生滚动条
     window.onresize = () => {
       return (() => {
-        menuMaxHeight.value = window.innerHeight - 70;
-      })();
-    };
+        menuMaxHeight.value = window.innerHeight - 70
+      })()
+    }
     return {
       data,
       color,
       menuMaxHeight,
       VITE_APP_TITLE,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less">

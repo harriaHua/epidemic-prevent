@@ -4,7 +4,7 @@
  * @Author: Harria
  * @Date: 2021-12-09 17:02:02
  * @LastEditors: Harria
- * @LastEditTime: 2021-12-13 00:20:11
+ * @LastEditTime: 2021-12-17 11:05:29
 -->
 <template>
   <div style="height: 100%">
@@ -52,18 +52,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, Ref } from "@vue/runtime-core";
-import GlobalAside from "./aside/GlobalAside.vue";
-import GlobalHeader from "./header/GlobalHeader.vue";
+import { defineComponent, ref, Ref } from '@vue/runtime-core'
+import GlobalAside from './aside/GlobalAside.vue'
+import GlobalHeader from './header/GlobalHeader.vue'
 export default defineComponent({
-  name: "GlobalLayout",
+  name: 'GlobalLayout',
   components: {
     GlobalAside,
     GlobalHeader,
   },
   setup() {
-    let isCollapse = ref(false);
-    let isShow = ref(true);
+    let isCollapse = ref(false)
+    let isShow = ref(true)
 
     /**
      * @description: 由子组件调用，改变isCollapse和isShow的值，控制菜单的伸缩和标题的出现
@@ -72,25 +72,25 @@ export default defineComponent({
      * @author: Harria
      */
     const changeIsCollapse = () => {
-      isCollapse.value = !isCollapse.value;
+      isCollapse.value = !isCollapse.value
       if (isCollapse.value) {
         //如果菜单关闭就让标题立即消失
-        isShow.value = false;
+        isShow.value = false
       } else {
         // 标题突然出现会撑开aside，延迟出现更流畅
         // TODO 待优化
         setTimeout(() => {
-          isShow.value = true;
-        }, 300);
+          isShow.value = true
+        }, 300)
       }
-    };
+    }
     return {
       isCollapse,
       isShow,
       changeIsCollapse,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less">

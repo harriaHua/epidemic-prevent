@@ -4,7 +4,7 @@
  * @Author: Harria
  * @Date: 2021-12-12 15:02:27
  * @LastEditors: Harria
- * @LastEditTime: 2021-12-12 19:43:32
+ * @LastEditTime: 2021-12-17 11:05:25
 -->
 <template>
   <svg aria-hidden="true">
@@ -12,15 +12,15 @@
   </svg>
 </template>
 
-<script>
-import { defineComponent, computed } from "vue";
+<script lang="ts">
+import { defineComponent, computed } from 'vue'
 
 export default defineComponent({
-  name: "SvgIcon",
+  name: 'SvgIcon',
   props: {
     prefix: {
       type: String,
-      default: "icon",
+      default: 'icon',
     },
     name: {
       type: String,
@@ -28,12 +28,12 @@ export default defineComponent({
     },
     color: {
       type: String,
-      default: "",
+      default: '',
     },
   },
   setup(props) {
-    const symbolId = computed(() => `#${props.prefix}-${props.name}`);
-    return { symbolId };
+    const symbolId = computed(() => `#${props.prefix}-${props.name}`)
+    return { symbolId }
   },
-});
+})
 </script>

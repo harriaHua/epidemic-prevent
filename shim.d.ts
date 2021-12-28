@@ -1,5 +1,5 @@
 /*
- * @Description: 
+ * @Description:
  * @Version: 0.1
  * @Author: Harria
  * @Date: 2021-12-08 00:33:36
@@ -15,3 +15,4 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
+declare module 'nprogress'

@@ -4,7 +4,7 @@
  * @Author: Harria
  * @Date: 2021-12-11 15:31:32
  * @LastEditors: Harria
- * @LastEditTime: 2021-12-12 20:06:44
+ * @LastEditTime: 2021-12-17 17:39:10
 -->
 <template>
   <div>
@@ -31,24 +31,24 @@
         ></el-avatar>
       </div>
       <!-- 设置 图标 -->
-      <el-icon class="icon-container hover"
-        ><tools class="header-icon"
-      /></el-icon>
+      <el-icon class="icon-container hover"><tools class="header-icon" /></el-icon>
       <!-- 退出图标 -->
-      <el-icon class="icon-container hover"
+      <el-icon class="icon-container hover" @click="logout()"
         ><SvgIcon name="export" class="header-icon" /></el-icon
     ></el-space>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "@vue/runtime-core";
-import { ElMessage } from "element-plus";
-import screenfull from "screenfull";
+import { defineComponent, onMounted, ref } from '@vue/runtime-core'
+import { error, infoNotification } from '@/utils/message'
+import screenfull from 'screenfull'
+import { useRouter } from 'vue-router'
 export default defineComponent({
-  name: "UserTools",
+  name: 'UserTools',
   setup(props, context) {
-    let isFullscreen = ref(false);
+    const router = useRouter()
+    let isFullscreen = ref(false)
     /**
      * @description: 全屏点击事件触发
      * @param {*}
@@ -58,23 +58,27 @@ export default defineComponent({
     const fullScreen = () => {
       if (screenfull.isEnabled) {
         //能用就切换全屏状态
-        screenfull.toggle();
-        isFullscreen.value = !isFullscreen.value;
+        screenfull.toggle()
+
+        isFullscreen.value = !isFullscreen.value
       } else {
         //不能用就发个消息
-        // TODO 去封装个全局方法
-        ElMessage({
-          message: "浏览器不支持全屏",
-          type: "error",
-        });
+        error('该浏览器不支持全屏')
       }
-    };
+    }
+    const logout = () => {
+      router.push('/login')
+    }
+    onMounted(() => {
+      // infoNotification('提示', '出错了')
+    })
     return {
       isFullscreen,
       fullScreen,
-    };
+      logout,
+    }
   },
-});
+})
 </script>
 
 <style lang="less" scoped>

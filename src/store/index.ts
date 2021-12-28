@@ -1,20 +1,16 @@
-/*
+/**
  * @Description:
  * @Version: 0.1
  * @Author: Harria
  * @Date: 2021-12-07 17:29:06
  * @LastEditors: Harria
- * @LastEditTime: 2021-12-08 19:26:27
+ * @LastEditTime: 2021-12-15 22:53:20
  */
-import { createStore, createLogger } from "vuex";
+import { defineStore } from "pinia";
 
-const debug: boolean = import.meta.env.MODE === "development";
-const plugins = debug ? [createLogger({ collapsed: true })] : [];
-export default createStore({
-  state: {},
-  mutations: {},
-  actions: {},
-  modules: {},
-  strict: debug,
-  plugins: plugins,
+export const useMainStore = defineStore({
+  id: "main",
+  state: () => ({
+    name: "超级管理员",
+  }),
 });

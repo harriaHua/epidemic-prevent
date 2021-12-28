@@ -2,6 +2,18 @@
 @subColor: #545c64;
 @grey: rgba(189, 189, 189, 0.342);
 
+.el-input__icon {
+  width: 25px !important;
+  height: inherit !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  transition: all var(--el-transition-duration) !important;
+}
+.el-input__inner:focus {
+  outline: 0;
+  border-color: @primaryColor !important;
+}
 .aside {
   //侧边栏
   background-color: @subColor;
@@ -43,11 +55,11 @@
 
 .main {
   //el-main的背景色
-  background-color: #f3f5f7;
+  background-image: linear-gradient(-180deg, #ebebeb 0%, #dcdddf 48%, #c4c5c7 99%);
 }
 
 .footer {
   //底部的颜色
-  background-color: #dddddd;
+  background-color: #c4c5c7;
   color: #8f9092;
 }

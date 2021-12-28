@@ -4,7 +4,7 @@
  * @Author: Harria
  * @Date: 2021-12-10 11:53:18
  * @LastEditors: Harria
- * @LastEditTime: 2021-12-11 00:37:07
+ * @LastEditTime: 2021-12-17 11:05:46
 -->
 <template>
   <!-- 这里要用template而不是div，用div的话会导致组件一场，菜单闭合的时候名称仍然显示 -->
@@ -27,10 +27,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from "@vue/runtime-core";
+import { defineComponent, onMounted } from '@vue/runtime-core'
 
 export default defineComponent({
-  name: "Menu",
+  name: 'Menu',
   props: {
     data: {
       type: Array,
@@ -38,9 +38,9 @@ export default defineComponent({
     },
   },
   setup(props, context) {
-    onMounted(() => {});
+    onMounted(() => {})
   },
-});
+})
 </script>
 
 <style scoped></style>

@@ -4,7 +4,7 @@
  * @Author: Harria
  * @Date: 2021-12-07 11:02:01
  * @LastEditors: Harria
- * @LastEditTime: 2021-12-08 22:21:56
+ * @LastEditTime: 2021-12-28 23:13:00
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -13,9 +13,49 @@
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
+    <style type="text/css">
+      #loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 101;
+      }
+      #Loading {
+        width: 100px !important;
+        height: 100px !important;
+        border-radius: 100%;
+        border: 10px solid;
+        border-top-color: rgba(254, 168, 23, 0.65);
+        border-bottom-color: rgba(57, 154, 219, 0.65);
+        border-left-color: rgba(188, 84, 93, 0.95);
+        border-right-color: rgba(137, 188, 79, 0.95);
+        animation: loading-animation 2s ease-in-out infinite alternate;
+      }
+      #content {
+        font-size: medium;
+        padding-top: 10px;
+        text-align: center;
+      }
+
+      @keyframes loading-animation {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(720deg);
+        }
+      }
+    </style>
   </head>
   <body>
+    <div id="loading">
+      <div id="Loading" style="width: 100px; height: 100px"></div>
+      <div id="content">Loading...</div>
+    </div>
+
     <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
   </body>
+  <script type="module" src="/src/main.ts"></script>
 </html>

@@ -1,3 +1,15 @@
+.el-input__icon {
+  width: 25px !important;
+  height: inherit !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  transition: all var(--el-transition-duration) !important;
+}
+.el-input__inner:focus {
+  outline: 0;
+  border-color: #e9be4a !important;
+}
 .aside {
   background-color: #545c64;
 }
@@ -31,9 +43,9 @@
   background-color: rgba(189, 189, 189, 0.342);
 }
 .main {
-  background-color: #f3f5f7;
+  background-image: linear-gradient(-180deg, #ebebeb 0%, #dcdddf 48%, #c4c5c7 99%);
 }
 .footer {
-  background-color: #dddddd;
+  background-color: #c4c5c7;
   color: #8f9092;
 }
