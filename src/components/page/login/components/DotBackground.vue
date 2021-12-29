@@ -4,13 +4,14 @@
  * @Author: Harria
  * @Date: 2021-12-29 17:12:34
  * @LastEditors: Harria
- * @LastEditTime: 2021-12-29 17:14:21
+ * @LastEditTime: 2021-12-30 00:08:31
 -->
 <template>
   <canvas id="canvasScreen"></canvas>
 </template>
 
 <script lang="ts">
+import { useUserStore } from '@/store/moudules/user'
 import { defineComponent, ref, onMounted } from '@vue/runtime-core'
 export default defineComponent({
   name: 'DotBackground',
@@ -20,19 +21,16 @@ export default defineComponent({
       h: number
       x: number
       y: number
-      color: string = '#'
+      color: string
       r: number = 1 + Math.random() * 2
       sx: number = Math.random() * 2 - 1
       sy: number = Math.random() * 2 - 1
-      colors: string = '0123456789ABCDEF'
       constructor(x: number, y: number) {
         this.w = x
         this.h = y
         this.x = Math.random() * x
         this.y = Math.random() * y
-        for (let i = 0; i < 6; i++) {
-          this.color += this.colors[Math.floor(Math.random() * 16)]
-        }
+        this.color = `rgba(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255},1)`
       }
       draw(ctx: CanvasRenderingContext2D) {
         ctx.beginPath()
@@ -51,17 +49,17 @@ export default defineComponent({
         const distanceX = this.x - dot.x
         const distanceY = this.y - dot.y
         const distance = Math.sqrt(distanceX ** 2 + distanceY ** 2)
-        if (distance < 100) {
-          if (dot == mouse && distance > 70) {
+        if (distance < 150) {
+          if (dot == mouse && distance > 70 && distance < 110) {
             this.x -= (this.x - dot.x) * 0.03
             this.y -= (this.y - dot.y) * 0.03
           }
-          let alpha = (100 - distance) / 100
+          let alpha = (150 - distance) / 150
           ctx.beginPath()
           ctx.moveTo(this.x, this.y)
           ctx.lineTo(dot.x, dot.y)
           ctx.closePath()
-          ctx.strokeStyle = `rgba(170,170,170,${alpha})`
+          ctx.strokeStyle = this.color.slice(0, -2) + `${alpha})`
           ctx.stroke()
         }
       }
@@ -72,6 +70,9 @@ export default defineComponent({
       mouse.y = event.clientY
     })
     onMounted(() => {
+      let userS = useUserStore()
+      console.log(userS.token)
+
       let canvas = <HTMLCanvasElement>document.getElementById('canvasScreen')
       let ctx = <CanvasRenderingContext2D>canvas.getContext('2d')
       let w = canvas.offsetWidth

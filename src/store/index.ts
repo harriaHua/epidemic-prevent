@@ -4,13 +4,14 @@
  * @Author: Harria
  * @Date: 2021-12-07 17:29:06
  * @LastEditors: Harria
- * @LastEditTime: 2021-12-15 22:53:20
+ * @LastEditTime: 2021-12-29 23:05:40
  */
-import { defineStore } from "pinia";
+import { App } from 'vue'
+import { createPinia } from 'pinia'
 
-export const useMainStore = defineStore({
-  id: "main",
-  state: () => ({
-    name: "超级管理员",
-  }),
-});
+const store = createPinia()
+export function setupStore(app: App<Element>) {
+  app.use(store)
+}
+
+export { store }

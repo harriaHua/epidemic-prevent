@@ -4,10 +4,10 @@
  * @Author: Harria
  * @Date: 2021-12-07 17:28:52
  * @LastEditors: Harria
- * @LastEditTime: 2021-12-28 23:27:55
+ * @LastEditTime: 2021-12-29 23:50:59
  */
 
-import { resolveDirective } from 'vue'
+import type { App } from 'vue'
 import { RouteRecordRaw, createRouter, createWebHashHistory } from 'vue-router'
 import NProgress from 'nprogress'
 const routes: RouteRecordRaw[] = [
@@ -49,4 +49,6 @@ router.afterEach(() => {
   // 在即将进入新的页面组件前，关闭掉进度条
 })
 
-export default router
+export function setupRouter(app: App<Element>) {
+  app.use(router)
+}
