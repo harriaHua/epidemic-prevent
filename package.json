@@ -11,6 +11,11 @@
       "path": "node_modules/cz-customizable"
     }
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "dependencies": {
     "@element-plus/icons": "^0.0.11",
     "@vitejs/plugin-vue": "^1.10.2",
@@ -29,12 +34,15 @@
     "vuex-module-decorators": "^2.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.0.1",
+    "@commitlint/config-conventional": "^16.0.0",
     "@typescript-eslint/eslint-plugin": "^5.6.0",
     "@typescript-eslint/parser": "^5.6.0",
     "@vue/compiler-sfc": "^3.0.4",
     "eslint": "^8.4.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
     "less": "^4.1.2",
     "less-loader": "^10.2.0",
     "prettier": "^2.5.1",
