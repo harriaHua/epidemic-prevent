@@ -4,7 +4,7 @@
  * @Author: Harria
  * @Date: 2021-12-17 14:28:50
  * @LastEditors: Harria
- * @LastEditTime: 2021-12-28 21:40:40
+ * @LastEditTime: 2021-12-29 17:15:26
 -->
 <template>
   <div :class="loginMainClass">
@@ -28,9 +28,8 @@
           <div class="to-register" @click="changeTable" v-show="loginShow">Register >></div>
         </transition>
       </div>
-      <!-- <div @click="click" class="btn flexCenter">登录</div> -->
-      <!-- <div class="btn flexCenter"></div> -->
     </div>
+    <DotBackground></DotBackground>
     <el-tooltip placement="bottom-start" effect="light">
       <template #content>
         <img src="@/assets/img/QRcode.png" alt="" style="width: 200px; height: 200px" />
@@ -53,13 +52,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from '@vue/runtime-core'
+import { defineComponent, onMounted, ref } from '@vue/runtime-core'
 import SvgIcon from '@/components/SvgIcon.vue'
 import LoginTable from './components/LoginTable.vue'
 import RegisterTable from './components/RegisterTable.vue'
+import DotBackground from './components/DotBackground.vue'
 export default defineComponent({
-  name: '',
-  component: { LoginTable, RegisterTable },
+  name: 'Login',
+  component: { LoginTable, RegisterTable, DotBackground },
   setup(props, context) {
     let loginMainClass = ref('loginMain')
     let loginShow = ref(true)
@@ -85,7 +85,7 @@ export default defineComponent({
   @originLength: 3em;
   @length: 80px;
   position: absolute;
-  z-index: 98;
+  z-index: 50;
   width: @originLength;
   height: @originLength;
   // background-color: yellow;
@@ -137,23 +137,18 @@ export default defineComponent({
   }
 }
 .login {
-  float: right;
-  // position: relative;
+  position: absolute;
+  z-index: 10;
+  right: 0;
   width: 50%;
   height: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #ebedf1;
 }
 .register {
-  float: left;
-  width: 50%;
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #ebedf1;
+  .login;
+  left: 0;
 }
 
 .flexCenter {
