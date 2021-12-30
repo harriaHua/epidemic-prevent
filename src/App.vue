@@ -23,7 +23,9 @@ export default {
       // error('This is an error message')
       // infoNotification('提示', '出错了')
     })
-    if (document.getElementById('loading')) document.getElementById('loading').remove()
+    if (document.getElementById('loading')) {
+      document.getElementById('loading').remove()
+    }
   },
 }
 </script>

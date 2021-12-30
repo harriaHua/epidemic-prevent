@@ -4,7 +4,7 @@
  * @Author: Harria
  * @Date: 2021-12-17 14:28:50
  * @LastEditors: Harria
- * @LastEditTime: 2021-12-29 17:15:26
+ * @LastEditTime: 2021-12-30 16:45:27
 -->
 <template>
   <div :class="loginMainClass">
@@ -22,10 +22,10 @@
           </div>
         </div>
         <transition name="s-fade" appear>
-          <div class="to-login" @click="changeTable" v-show="!loginShow">&lt;&lt; Login</div>
+          <div v-show="!loginShow" class="to-login" @click="changeTable">&lt;&lt; Login</div>
         </transition>
         <transition name="s-fade" appear>
-          <div class="to-register" @click="changeTable" v-show="loginShow">Register >></div>
+          <div v-show="loginShow" class="to-register" @click="changeTable">Register >></div>
         </transition>
       </div>
     </div>
@@ -39,12 +39,12 @@
       </div>
     </el-tooltip>
     <transition name="slide-left" appear>
-      <div class="register" v-show="!loginShow">
+      <div v-show="!loginShow" class="register">
         <RegisterTable></RegisterTable>
       </div>
     </transition>
     <transition name="slide-right" appear>
-      <div class="login" v-show="loginShow">
+      <div v-show="loginShow" class="login">
         <LoginTable></LoginTable>
       </div>
     </transition>
@@ -61,13 +61,13 @@ export default defineComponent({
   name: 'Login',
   component: { LoginTable, RegisterTable, DotBackground },
   setup(props, context) {
-    let loginMainClass = ref('loginMain')
-    let loginShow = ref(true)
+    const loginMainClass = ref('loginMain')
+    const loginShow = ref(true)
     const changeTable = () => {
       loginShow.value = !loginShow.value
       // setTimeout(() => {
       // }, 800)
-      if (loginMainClass.value.indexOf('active') != -1) {
+      if (loginMainClass.value.indexOf('active') !== -1) {
         loginMainClass.value = 'loginMain'
       } else {
         loginMainClass.value = 'loginMain active'
@@ -76,36 +76,35 @@ export default defineComponent({
 
     return { loginMainClass, loginShow, changeTable }
   },
-  components: { SvgIcon },
 })
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .angle {
-  @originLength: 3em;
-  @length: 80px;
+  $originLength: 3em;
+  $length: 80px;
   position: absolute;
   z-index: 50;
-  width: @originLength;
-  height: @originLength;
+  width: $originLength;
+  height: $originLength;
   // background-color: yellow;
-  left: calc(100% - @originLength);
+  left: calc(100% - $originLength);
   background: linear-gradient(-135deg, #fff 50%, #ebedf1);
   border-bottom-left-radius: 5px;
   -webkit-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
   overflow: hidden;
   &:hover {
-    width: @length;
-    height: @length;
-    left: calc(100% - @length);
+    width: $length;
+    height: $length;
+    left: calc(100% - $length);
     &::after {
       content: '';
       position: absolute;
-      width: @length;
-      height: @length;
+      width: $length;
+      height: $length;
       // background-color: yellow;
-      left: calc(100% - @length);
+      left: calc(100% - $length);
 
       border-bottom-left-radius: 5px;
     }
@@ -113,10 +112,10 @@ export default defineComponent({
   &::after {
     content: '';
     position: absolute;
-    width: @originLength;
-    height: @originLength;
+    width: $originLength;
+    height: $originLength;
     // background-color: yellow;
-    left: calc(100% - @originLength);
+    left: calc(100% - $originLength);
     background: linear-gradient(
       -135deg,
       transparent 38%,
@@ -147,7 +146,7 @@ export default defineComponent({
   align-items: center;
 }
 .register {
-  .login;
+  @extend .login;
   left: 0;
 }
 
@@ -224,7 +223,7 @@ export default defineComponent({
       }
     }
     .to-login {
-      .to-register;
+      @extend .to-register;
       float: left;
       background-position: 100% 100%;
     }

@@ -20,14 +20,14 @@ import { defineComponent, ref } from '@vue/runtime-core'
 export default defineComponent({
   name: 'RegisterTable',
   setup(props, context) {
-    let userName = ref('')
+    const userName = ref('')
 
     return { userName }
   },
 })
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .registerTable {
   width: 300px;
   // height: 300px;

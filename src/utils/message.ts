@@ -4,7 +4,7 @@
  * @Author: Harria
  * @Date: 2021-12-15 23:12:50
  * @LastEditors: Harria
- * @LastEditTime: 2021-12-27 23:18:22
+ * @LastEditTime: 2021-12-30 16:46:19
  */
 
 import { ElMessage, ElMessageBox, ElNotification } from 'element-plus'
@@ -115,36 +115,4 @@ export function warnNotification(title: string, msg: any) {
  */
 export function errorNotification(title: string, msg: any) {
   _notification(title, msg, 'error')
-}
-
-/**
- * @description: 消息弹出框
- * @param {string} title 消息弹出框标题
- * @param {any} msg 消息弹出框内容
- * @param {string} btnName 消息弹出框按钮名称
- * @param {any} type 消息弹出框类别
- * @return {*}
- * @author: Harria
- */
-export function alertBox(title: string, msg: any, btnName: string = '确定', type: any = '') {
-  return ElMessageBox.alert(msg, title, {
-    type: type,
-    confirmButtonText: btnName,
-  })
-}
-
-export function confirmBox(
-  title: string,
-  msg: string,
-  btnName: string = '确定',
-  cancelsName: string = '取消',
-  type: any = ''
-) {
-  return ElMessageBox.confirm(msg, title, {
-    type: type,
-    confirmButtonText: btnName,
-    cancelButtonText: cancelsName,
-    closeOnClickModal: false,
-    closeOnPressEscape: false,
-  })
 }

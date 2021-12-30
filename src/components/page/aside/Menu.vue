@@ -4,13 +4,13 @@
  * @Author: Harria
  * @Date: 2021-12-10 11:53:18
  * @LastEditors: Harria
- * @LastEditTime: 2021-12-17 11:05:46
+ * @LastEditTime: 2021-12-30 16:40:55
 -->
 <template>
   <!-- 这里要用template而不是div，用div的话会导致组件一场，菜单闭合的时候名称仍然显示 -->
   <template v-for="item in data" :key="item.id">
     <!-- 有孩子就用下拉菜单 -->
-    <el-sub-menu :index="item.id" v-if="item.children.length != 0">
+    <el-sub-menu v-if="item.children.length != 0" :index="item.id">
       <template #title>
         <el-icon><component :is="item.icon" /> </el-icon>
         <span>{{ item.name }}</span>
@@ -34,7 +34,7 @@ export default defineComponent({
   props: {
     data: {
       type: Array,
-      default: [],
+      default: () => [],
     },
   },
   setup(props, context) {

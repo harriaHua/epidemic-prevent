@@ -4,7 +4,7 @@
  * @Author: Harria
  * @Date: 2021-12-18 09:57:35
  * @LastEditors: Harria
- * @LastEditTime: 2021-12-18 22:43:34
+ * @LastEditTime: 2021-12-30 16:46:58
 -->
 <template>
   <div class="loginTable">
@@ -34,12 +34,12 @@ import { useRouter } from 'vue-router'
 import { defineComponent, ref } from '@vue/runtime-core'
 import SvgIcon from '@/components/SvgIcon.vue'
 export default defineComponent({
+  name: 'LoginTable',
   components: { SvgIcon },
-  name: 'LoginTable.vue',
   setup(props, context) {
-    let router = useRouter()
-    let userName = ref('')
-    let password = ref('')
+    const router = useRouter()
+    const userName = ref('')
+    const password = ref('')
     const login = () => {
       successNotification('登录成功', '')
       router.push('/')
@@ -50,7 +50,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .loginTable {
   width: 360px;
   padding: 30px;

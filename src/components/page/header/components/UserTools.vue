@@ -48,7 +48,7 @@ export default defineComponent({
   name: 'UserTools',
   setup(props, context) {
     const router = useRouter()
-    let isFullscreen = ref(false)
+    const isFullscreen = ref(false)
     /**
      * @description: 全屏点击事件触发
      * @param {*}
@@ -81,15 +81,15 @@ export default defineComponent({
 })
 </script>
 
-<style lang="less" scoped>
-@iconWH: 33px;
+<style lang="scss" scoped>
+$iconWH: 33px;
 
 .wrap {
   display: flex;
   align-items: center;
   .header-icon {
-    width: @iconWH;
-    height: @iconWH;
+    width: $iconWH;
+    height: $iconWH;
   }
   .icon-container {
     width: 40px;

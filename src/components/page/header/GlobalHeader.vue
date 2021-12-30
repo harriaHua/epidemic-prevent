@@ -4,15 +4,15 @@
  * @Author: Harria
  * @Date: 2021-12-09 17:05:26
  * @LastEditors: Harria
- * @LastEditTime: 2021-12-17 11:05:34
+ * @LastEditTime: 2021-12-30 16:40:03
 -->
 <template>
   <el-header class="header">
     <!-- 控制菜单开关的icon -->
     <component
       :is="iconDirectionLeft ? 'fold' : 'expand'"
-      @click="changeIsCollapse"
       class="header-icon hover"
+      @click="changeIsCollapse"
     ></component>
     <UserTools></UserTools>
   </el-header>
@@ -28,8 +28,9 @@ export default defineComponent({
     MenuAction,
     UserTools,
   },
+  emits: ['change-is-collapse'],
   setup(props, context) {
-    let iconDirectionLeft = ref(true) // 现在是朝左吗
+    const iconDirectionLeft = ref(true) // 现在是朝左吗
     /**
      * @description: 调用父组件 改变IsCollapse的方法，控制菜单闭合的同时改变一下icon朝向
      * @param {*}
@@ -38,14 +39,14 @@ export default defineComponent({
      */
     const changeIsCollapse = () => {
       iconDirectionLeft.value = !iconDirectionLeft.value
-      context.emit('changeIsCollapse')
+      context.emit('change-is-collapse')
     }
     return { iconDirectionLeft, changeIsCollapse }
   },
 })
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .header {
   display: flex;
   justify-content: space-between;

@@ -65,15 +65,15 @@ export default defineComponent({
       readonly backgroundColor: string
       readonly textColor: string
     }
-    let defaultThemeColor: ThemeColor = {
+    const defaultThemeColor: ThemeColor = {
       activeTextColor: '#ffd04b',
       backgroundColor: '#545c64',
       textColor: '#fff',
     }
     // XXX 之后会换成localstorage
-    let theme = import.meta.env.VITE_APP_THEME
+    const theme = import.meta.env.VITE_APP_THEME
 
-    let menuMaxHeight = ref(window.innerHeight - 70)
+    const menuMaxHeight = ref(window.innerHeight - 70)
     /**
      * @description: 根据主题名匹配菜单颜色
      * @param { string } theme 主题名
@@ -89,7 +89,7 @@ export default defineComponent({
           return defaultThemeColor
       }
     }
-    let color = ref(switchTheme(theme))
+    const color = ref(switchTheme(theme))
 
     // 监视浏览器窗口变化，每变一次就重新计算一下菜单高度，保证aside不会出现原生滚动条
     window.onresize = () => {
@@ -107,9 +107,9 @@ export default defineComponent({
 })
 </script>
 
-<style scoped lang="less">
-@height: 45px;
-@width: 220px;
+<style scoped lang="scss">
+$height: 45px;
+$width: 220px;
 
 .logo {
   width: auto;
@@ -118,8 +118,8 @@ export default defineComponent({
   align-items: center;
   img {
     margin: 7.5px 10px;
-    width: @height;
-    height: @height;
+    width: $height;
+    height: $height;
   }
   h1 {
     height: 22px;

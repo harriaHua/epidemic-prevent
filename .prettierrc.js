@@ -4,7 +4,7 @@
  * @Author: Harria
  * @Date: 2021-12-08 19:19:43
  * @LastEditors: Harria
- * @LastEditTime: 2021-12-15 22:59:51
+ * @LastEditTime: 2021-12-30 18:51:54
  */
 module.exports = {
   tabWidth: 2,
@@ -22,4 +22,5 @@ module.exports = {
     },
   ],
   arrowParens: 'always',
+  endOfLine: 'auto',
 }

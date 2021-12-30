@@ -12,7 +12,7 @@ import svgIcon from '@/components/SvgIcon.vue' // 全局svg图标组件
 import * as ElIconModules from '@element-plus/icons'
 
 export function setupElIconModules(app: App<Element>) {
-  app.component('svg-icon', svgIcon)
+  app.component('SvgIcon', svgIcon)
   // 统一注册Icon图标
   for (const iconName in ElIconModules) {
     if (Reflect.has(ElIconModules, iconName)) {

@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-let ss = import.meta.env.VITE_APP_TITLE
+const ss = import.meta.env.VITE_APP_TITLE
 
 console.log('🚀 ~ file: Home.vue ~ line 18 ~ ss', ss)
 </script>

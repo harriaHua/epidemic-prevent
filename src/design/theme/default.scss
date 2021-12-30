@@ -1,0 +1,63 @@
+/* stylelint-disable selector-class-pattern */
+$primaryColor: #e9be4a;
+$subColor: #545c64;
+$grey: rgb(189 189 189 / 34.2%);
+.el-input__icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 25px !important;
+  height: inherit !important;
+  transition: all var(--el-transition-duration) !important;
+}
+.el-input__inner:focus {
+  border-color: $primaryColor !important;
+  outline: 0;
+}
+.aside {
+  /* 侧边栏 */
+  background-color: $subColor;
+  .logo {
+    /* 左上角logo处的颜色 */
+    background-color: $subColor;
+    h1 {
+      /* 标题的颜色 */
+      color: $primaryColor;
+      transition: all 0.3s;
+      &:hover {
+        color: #f7f7f7;
+      }
+    }
+  }
+  .el-scrollbar__thumb {
+    /* 菜单的滚动条 */
+    background-color: $primaryColor;
+  }
+}
+.header {
+  /* 头部 */
+  background-color: $subColor;
+  .header-icon {
+    color: $primaryColor;
+    .use {
+      fill: red;
+    }
+  }
+  .hover {
+    border-radius: 4px;
+    transition: all 0.3s;
+    &:hover {
+      background-color: $grey;
+    }
+  }
+}
+.main {
+  /* el-main的背景色 */
+  background-image: linear-gradient(-180deg, #ebebeb 0%, #dcdddf 48%, #c4c5c7 99%);
+}
+.footer {
+  color: #8f9092;
+
+  /* 底部的颜色 */
+  background-color: #c4c5c7;
+}

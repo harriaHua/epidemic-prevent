@@ -1,16 +1,3 @@
 {
-  "cSpell.words": [
-    "camelcase",
-    "eqeqeq",
-    "Harria",
-    "iife",
-    "isnan",
-    "nonwords",
-    "Parens",
-    "plusplus",
-    "screenfull",
-    "scripthost",
-    "vite",
-    "vuex"
-  ]
+  "cSpell.words": ["camelcase", "eqeqeq", "Harria", "iife", "isnan", "nonwords", "Parens", "plusplus", "screenfull", "scripthost", "vite", "vuex"]
 }

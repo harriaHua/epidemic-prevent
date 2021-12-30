@@ -4,7 +4,7 @@
  * @Author: Harria
  * @Date: 2021-12-09 17:02:02
  * @LastEditors: Harria
- * @LastEditTime: 2021-12-17 11:05:29
+ * @LastEditTime: 2021-12-30 16:38:01
 -->
 <template>
   <div style="height: 100%">
@@ -25,13 +25,13 @@
         >
           </el-drawer > -->
         <!-- 侧边栏 -->
-        <GlobalAside :isCollapse="isCollapse" :isShow="isShow"></GlobalAside>
+        <GlobalAside :is-collapse="isCollapse" :is-show="isShow"></GlobalAside>
       </el-aside>
 
       <!-- 右边的大容器 -->
       <el-container>
         <!-- 头部 header -->
-        <GlobalHeader @changeIsCollapse="changeIsCollapse"></GlobalHeader>
+        <GlobalHeader @change-is-collapse="changeIsCollapse"></GlobalHeader>
 
         <!-- 主要内容 main -->
         <el-main class="main">
@@ -62,8 +62,8 @@ export default defineComponent({
     GlobalHeader,
   },
   setup() {
-    let isCollapse = ref(false)
-    let isShow = ref(true)
+    const isCollapse = ref(false)
+    const isShow = ref(true)
 
     /**
      * @description: 由子组件调用，改变isCollapse和isShow的值，控制菜单的伸缩和标题的出现
@@ -93,13 +93,13 @@ export default defineComponent({
 })
 </script>
 
-<style scoped lang="less">
+<style scoped lang="scss">
 .aside {
   height: 100%;
   width: auto !important;
   max-width: 280px;
 }
-/deep/ .el-drawer__body {
+::v-deep .el-drawer__body {
   padding: 0;
   // background-color: @backgroundColor;
 }

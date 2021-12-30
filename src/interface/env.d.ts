@@ -7,7 +7,7 @@
  * @LastEditTime: 2021-12-11 21:58:01
  */
 interface ImportMetaEnv {
-  readonly VITE_APP_BASE_URL: string;
-  readonly VITE_APP_TITLE: string;
-  readonly VITE_APP_THEME: string;
+  readonly VITE_APP_BASE_URL: string
+  readonly VITE_APP_TITLE: string
+  readonly VITE_APP_THEME: string
 }

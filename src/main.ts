@@ -4,7 +4,7 @@
  * @Author: Harria
  * @Date: 2021-12-07 11:02:01
  * @LastEditors: Harria
- * @LastEditTime: 2021-12-30 00:18:18
+ * @LastEditTime: 2021-12-30 13:01:21
  */
 // TODO  commit 🧐
 import App from './App.vue'
@@ -16,7 +16,7 @@ import { setupPlugins } from '@/plugins'
 
 // 需要全局引入再添加
 
-import '@/design/index.less'
+import '@/design/index.scss'
 
 import '@/plugins'
 
