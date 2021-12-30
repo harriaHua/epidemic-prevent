@@ -1,13 +1,14 @@
 {
   "name": "epidemic-prevent",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint --fix --ext src .ts,.tsx,.vue,.js,.jsx",
+    "lint": "eslint src --fix --ext .ts,.tsx,.vue,.js,.jsx ",
     "commit": "git-cz",
     "release": "standard-version --preset gitmoji-config",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "lint-one": "eslint --fix"
   },
   "config": {
     "commitizen": {
@@ -18,7 +19,10 @@
     "src/**/*.scss": [
       "stylelint --fix"
     ],
-    "src/**/*.{js,vue,ts,tsx}": "npm run lint"
+    "src/**/*.{js,vue,ts,tsx}": [
+      "prettier --write",
+      "eslint --cache --fix"
+    ]
   },
   "husky": {
     "hooks": {
