@@ -4,7 +4,7 @@
  * @Author: Harria
  * @Date: 2021-12-17 14:28:50
  * @LastEditors: Harria
- * @LastEditTime: 2021-12-30 16:45:27
+ * @LastEditTime: 2022-01-14 12:46:26
 -->
 <template>
   <div :class="loginMainClass">
@@ -161,7 +161,7 @@ export default defineComponent({
   height: 100vh;
   margin: auto;
   overflow: hidden;
-  background-color: #ebedf1;
+  background-color: var(--background-color);
 }
 
 .switchWrapper {
@@ -185,7 +185,7 @@ export default defineComponent({
       font-size: 30px;
       font-weight: bolder;
       transition: all 0.3s linear;
-      color: #e9be4a;
+      color: var(--main-color);
       background-image: linear-gradient(
         90deg,
         rgb(50, 145, 113),
@@ -212,7 +212,7 @@ export default defineComponent({
       color: whitesmoke;
       background-clip: text;
       -webkit-background-clip: text;
-      background-image: linear-gradient(90deg, #fc0, #fc0);
+      background-image: linear-gradient(90deg, var(--main-color), var(--main-color));
       background-repeat: no-repeat;
       background-size: 0 100%;
       transition: all 0.5s linear;

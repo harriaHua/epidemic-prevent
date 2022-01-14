@@ -4,7 +4,7 @@
  * @Author: Harria
  * @Date: 2021-12-09 17:05:48
  * @LastEditors: Harria
- * @LastEditTime: 2021-12-17 11:05:50
+ * @LastEditTime: 2022-01-14 12:00:57
 -->
 <template>
   <!-- logo -->
@@ -66,9 +66,9 @@ export default defineComponent({
       readonly textColor: string
     }
     const defaultThemeColor: ThemeColor = {
-      activeTextColor: '#ffd04b',
-      backgroundColor: '#545c64',
-      textColor: '#fff',
+      activeTextColor: 'var(--main-color)',
+      backgroundColor: 'var(--background-color)',
+      textColor: 'var(--word-color)',
     }
     // XXX 之后会换成localstorage
     const theme = import.meta.env.VITE_APP_THEME

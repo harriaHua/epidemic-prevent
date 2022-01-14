@@ -4,7 +4,7 @@
  * @Author: Harria
  * @Date: 2021-12-18 09:57:35
  * @LastEditors: Harria
- * @LastEditTime: 2021-12-30 16:46:58
+ * @LastEditTime: 2022-01-14 12:50:20
 -->
 <template>
   <div class="loginTable">
@@ -24,7 +24,7 @@
             ><svg-icon name="password" /></el-icon></template></el-input
     ></el-row>
 
-    <el-row><el-button type="warning" @click="login()">登录</el-button></el-row>
+    <el-row><el-button @click="login()">登录</el-button></el-row>
   </div>
 </template>
 
@@ -54,9 +54,9 @@ export default defineComponent({
 .loginTable {
   width: 360px;
   padding: 30px;
-  background-color: white;
+  background-color: var(--quote-background-color);
   border-radius: 5px;
-  box-shadow: #d9d9d9 -1px 9px 20px 2px;
+  box-shadow: var(--quote-shadow-color) -1px 9px 20px 2px;
   .logo {
     width: 100px;
     height: 100px;

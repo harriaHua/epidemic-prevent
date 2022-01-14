@@ -1,6 +1,5 @@
 /* stylelint-disable selector-class-pattern */
-$primaryColor: #e9be4a;
-$subColor: #545c64;
+
 $grey: rgb(189 189 189 / 34.2%);
 .el-input__icon {
   display: flex !important;
@@ -11,43 +10,47 @@ $grey: rgb(189 189 189 / 34.2%);
   transition: all var(--el-transition-duration) !important;
 }
 .el-input__inner:focus {
-  border-color: $primaryColor !important;
+  border-color: var(--main-color) !important;
   outline: 0;
 }
 .aside {
   /* 侧边栏 */
-  background-color: $subColor;
+  background-color: var(--background-color);
   .logo {
     /* 左上角logo处的颜色 */
-    background-color: $subColor;
+    background-color: var(--background-color);
     h1 {
       /* 标题的颜色 */
-      color: $primaryColor;
+      color: var(--main-color);
       transition: all 0.3s;
       &:hover {
         color: #f7f7f7;
       }
     }
   }
+  .el-menu-item:hover {
+    background-color: var(--light-main-color);
+}
   .el-scrollbar__thumb {
     /* 菜单的滚动条 */
-    background-color: $primaryColor;
+    background-color: var(--main-color);
   }
 }
 .header {
   /* 头部 */
-  background-color: $subColor;
+  background-color: var(--background-color);
   .header-icon {
-    color: $primaryColor;
-    .use {
-      fill: red;
+    color: var(--main-color);
+    svg,path,use {
+      color: var(--main-color);
+      fill: var(--main-color)
     }
   }
   .hover {
     border-radius: 4px;
     transition: all 0.3s;
     &:hover {
-      background-color: $grey;
+      background-color: var(--quote-background-color);
     }
   }
 }
@@ -60,4 +63,13 @@ $grey: rgb(189 189 189 / 34.2%);
 
   /* 底部的颜色 */
   background-color: #c4c5c7;
+}
+button{
+  color: var(--main-contrast-color) !important;
+  background-color: var(--main-color) !important;
+  transition: background-color .3s ,border-color .3s !important;
+  &:hover{
+    color: var(--light-main-contrast-color) !important;
+    background-color: var(--light-main-color) !important;
+  }
 }

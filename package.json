@@ -12,7 +12,10 @@
   },
   "config": {
     "commitizen": {
-      "path": "node_modules/cz-customizable"
+      "path": "D:/Program Files/nodejs/node_global/node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "D:/Program Files/nodejs/node_global/node_modules/cz-customizable/cz-config.js"
     }
   },
   "lint-staged": {

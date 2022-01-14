@@ -6,12 +6,20 @@ html body {
   height: 100vh;
   padding: 0;
   margin: 0;
-  background-color: #ebedf1;
+  background-color: var(--background-color);
+}
+*{
+  transition: background-color .3s ,border-color .3s;
+  &::selection {
+    color: var(--main-contrast-color);
+    background-color: var(--selection-color);
+}
 }
 #app {
   height: 100%;
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  color: #2c3e50;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--word-color);
+
 }
