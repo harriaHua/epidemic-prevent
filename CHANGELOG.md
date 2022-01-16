@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.1](https://gitee.com/harria/epidemic-prevent/compare/v0.2.0...v0.2.1) (2022-01-16)
+
+
+### ✅ Tests
+
+* 配置了mock ([58b21fb](https://gitee.com/harria/epidemic-prevent/commits/58b21fb))
+
+
+
 # [0.2.0](https://gitee.com/harria/epidemic-prevent/compare/v0.1.0...v0.2.0) (2022-01-16)
 
 ### ✨ Features

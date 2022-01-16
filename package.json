@@ -1,6 +1,6 @@
 {
   "name": "epidemic-prevent",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "scripts": {
     "build": "vite build",
     "commit": "git-cz",
