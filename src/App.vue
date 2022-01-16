@@ -4,7 +4,7 @@
  * @Author: Harria
  * @Date: 2021-12-07 11:02:01
  * @LastEditors: Harria
- * @LastEditTime: 2021-12-28 23:12:19
+ * @LastEditTime: 2022-01-16 18:44:34
 -->
 <template>
   <!-- <div></div> -->
@@ -13,10 +13,14 @@
 
 <script lang="ts">
 import { onMounted } from '@vue/runtime-core'
+import axios from 'axios'
 export default {
   name: 'App',
   components: {},
   setup() {
+    axios.get('/api/getUser').then((res) => {
+      console.log(res)
+    })
     onMounted(() => {
       // alertBox('Warning', '欣赏欣赏下', '确定', 'warning')
       // confirmBox('2asad', '23s', 'queding', 'fanhui1', 'error')

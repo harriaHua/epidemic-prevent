@@ -4,7 +4,7 @@
  * @Author: Harria
  * @Date: 2021-12-09 17:02:02
  * @LastEditors: Harria
- * @LastEditTime: 2021-12-30 16:38:01
+ * @LastEditTime: 2022-01-16 17:35:10
 -->
 <template>
   <div style="height: 100%">
@@ -36,7 +36,6 @@
         <!-- 主要内容 main -->
         <el-main class="main">
           <router-view />
-          <SvgIcon name="xia" class="xia-icon" />
         </el-main>
 
         <!-- 底部 footer -->

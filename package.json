@@ -2,13 +2,14 @@
   "name": "epidemic-prevent",
   "version": "0.2.0",
   "scripts": {
-    "dev": "vite",
     "build": "vite build",
-    "lint": "eslint src --fix --ext .ts,.tsx,.vue,.js,.jsx ",
     "commit": "git-cz",
-    "release": "standard-version --preset gitmoji-config",
+    "dev": "vite",
+    "lint-one": "eslint --fix",
+    "lint": "eslint src --fix --ext .ts,.tsx,.vue,.js,.jsx ",
+    "mock": "cross-env NODE_ENV=development vite",
     "prettier": "prettier --write .",
-    "lint-one": "eslint --fix"
+    "release": "standard-version --preset gitmoji-config"
   },
   "config": {
     "commitizen": {
@@ -36,6 +37,7 @@
     "axios": "^0.24.0",
     "dayjs": "^1.10.7",
     "element-plus": "^1.2.0-beta.5",
+    "mockjs": "^1.1.0",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.0-rc.10",
     "screenfull": "^6.0.0",
@@ -53,6 +55,7 @@
     "commitlint": "^16.0.1",
     "commitlint-config-gitmoji": "^1.0.1",
     "conventional-changelog-gitmoji-config": "^1.4.3",
+    "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.0.1",
     "cz-customizable": "^6.3.0",
     "eslint": "^8.6.0",
@@ -81,6 +84,7 @@
     "unplugin-auto-import": "^0.5.1",
     "unplugin-vue-components": "^0.17.6",
     "vite": "^2.5.10",
+    "vite-plugin-mock": "^2.9.6",
     "vite-plugin-svg-icons": "^1.0.5",
     "vue-eslint-parser": "^8.0.1"
   }

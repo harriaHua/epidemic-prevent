@@ -4,7 +4,7 @@
  * @Author: Harria
  * @Date: 2021-12-08 00:47:38
  * @LastEditors: Harria
- * @LastEditTime: 2021-12-17 09:44:06
+ * @LastEditTime: 2022-01-16 18:34:28
  */
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -13,6 +13,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import viteSvgIcons from 'vite-plugin-svg-icons'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import { viteMockServe } from 'vite-plugin-mock'
 
 export default defineConfig({
   plugins: [
@@ -28,6 +29,7 @@ export default defineConfig({
       iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
       symbolId: 'icon-[dir]-[name]',
     }),
+    viteMockServe({ mockPath: './mock' }),
   ],
   base: './', // 类似publicPath，'./'避免打包访问后空白页面，要加上，不然线上也访问不了
   resolve: {
