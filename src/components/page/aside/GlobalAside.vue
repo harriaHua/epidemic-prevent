@@ -4,7 +4,7 @@
  * @Author: Harria
  * @Date: 2021-12-09 17:05:48
  * @LastEditors: Harria
- * @LastEditTime: 2022-01-14 12:00:57
+ * @LastEditTime: 2022-01-16 14:08:01
 -->
 <template>
   <!-- logo -->
@@ -12,7 +12,9 @@
     <div class="logo">
       <img src="~@/assets/img/logo_light.png" alt="logo" />
       <!-- 标题 -->
-      <h1 v-if="isShow">{{ VITE_APP_TITLE }}</h1>
+      <h1 v-if="isShow">
+        {{ VITE_APP_TITLE }}
+      </h1>
     </div>
   </router-link>
 
@@ -29,17 +31,18 @@
       :collapse="isCollapse"
     >
       <!-- 递归组件生成菜单树 -->
-      <Menu :data="data"></Menu>
+      <Menu :data="data" />
     </el-menu>
   </el-scrollbar>
 </template>
 
 <script lang="ts">
 import { defineComponent, onMounted, ref } from '@vue/runtime-core'
-import data from './menu.js'
+import { data } from './menu'
+console.log('🚀 ~ file: GlobalAside.vue ~ line 42 ~ data', data)
 import Menu from './Menu.vue'
 // 从环境变量中引用应用名
-const VITE_APP_TITLE = import.meta.env.VITE_APP_TITLE
+const { VITE_APP_TITLE } = import.meta.env
 export default defineComponent({
   name: 'GlobalAside',
   components: { Menu },
@@ -67,7 +70,7 @@ export default defineComponent({
     }
     const defaultThemeColor: ThemeColor = {
       activeTextColor: 'var(--main-color)',
-      backgroundColor: 'var(--background-color)',
+      backgroundColor: 'var(--quote-background-color)',
       textColor: 'var(--word-color)',
     }
     // XXX 之后会换成localstorage
@@ -92,11 +95,10 @@ export default defineComponent({
     const color = ref(switchTheme(theme))
 
     // 监视浏览器窗口变化，每变一次就重新计算一下菜单高度，保证aside不会出现原生滚动条
-    window.onresize = () => {
-      return (() => {
+    window.onresize = () =>
+      (() => {
         menuMaxHeight.value = window.innerHeight - 70
       })()
-    }
     return {
       data,
       color,

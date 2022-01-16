@@ -4,7 +4,7 @@
  * @Author: Harria
  * @Date: 2021-12-29 17:12:34
  * @LastEditors: Harria
- * @LastEditTime: 2021-12-30 17:36:31
+ * @LastEditTime: 2022-01-14 20:02:41
 -->
 <template>
   <canvas id="canvasScreen"></canvas>
@@ -112,8 +112,8 @@ export default defineComponent({
 <style lang="scss" scoped>
 #canvasScreen {
   width: 100%;
-  height: 100%;
   position: absolute;
+  height: 100%;
   z-index: 0;
 }
 </style>

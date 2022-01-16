@@ -1,5 +1,5 @@
 /* @import 'element-plus/dist/index.css'; */
-:root{
+:root {
   --background-color: #fff;
   --border-color: #eef2f8;
   --deputy-color: #947261;
@@ -7,14 +7,16 @@
   --light-main-contrast-color: #000;
   --main-color: #5288a3;
   --main-contrast-color: #f8f8f8;
-  --quote-background-color: #f8f8f8;
+  --quote-background-color: #ebebeb;
   --selection-color: rgb(82 136 163 / 70%);
   --word-color: #596172;
-  --quote-shadow-color: #d9d9d9 
+  --quote-shadow-color: #cacaca;
 }
-@import 'nprogress/nprogress.css'; /* 这个样式必须引入 */
+
+@import 'nprogress/nprogress.css';
+
+/* 这个样式必须引入 */
 @import 'element-plus/theme-chalk/index.css';
 @import 'ant-design-vue/dist/antd.css';
 @import 'common.scss';
 @import 'theme/default.scss';
-
